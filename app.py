@@ -91,9 +91,9 @@ def forecast_sales_page():
             forecast_data = forecast_response.json()
 
             st.write("Forecasted Sales for the Next 7 Days:")
-            
+            result = json.loads(forecast_data.get('prediction', 'N/A'))
             # Convert data to DataFrame
-            forecast_df = pd.DataFrame(list(forecast_data.items()), columns=['Date', 'Forecasted Sales Volume'])
+            forecast_df = pd.DataFrame(result, columns=['Date', 'Forecasted Sales Volume'])
             st.dataframe(forecast_df)
             
             # Plot forecast data
