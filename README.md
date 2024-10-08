@@ -6,6 +6,8 @@ This application allows users to forecast sales for different stores and items, 
 
 The backend is built with **FastAPI** and uses a machine learning model trained with historical data. The frontend is built using **Streamlit** to provide a user-friendly interface.
 
+<a href="https://three6120-at2-streamlit-24886400.onrender.com/">Go to web application</a>
+
 ## Tech Stack
 - **Frontend**: Streamlit
 - **Backend**: FastAPI (Python-based API)
