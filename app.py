@@ -31,8 +31,14 @@ def home_page():
         content = response.json()
         description = content.get('Description', "Description not available")
         githubLink = content.get('github_repo_link', "#")
+        githubAPILink = content.get('github_api_link', "#")
+        githubAppLink = content.get('github_app_link', "#")
+        githubPackageLink = content.get('github_package_link', "#")
         st.markdown(f"""{description}""")
-        st.write(f"Github Link: {githubLink}")
+        st.write(f"Github Notebook Link: {githubLink}")
+        st.write(f"Github API Link: {githubAPILink}")
+        st.write(f"Github Streamlit Link: {githubAppLink}")
+        st.write(f"Github Package Link: {githubPackageLink}")
     
     st.markdown("""
         This interactive app allows you to:
@@ -91,7 +97,7 @@ def forecast_sales_page():
 
             st.write("Forecasted Sales for the Next 7 Days:")
             # Convert data to DataFrame
-            forecast_df = pd.DataFrame(forecast_data, columns=['Date', 'Forecasted Sales Volume'])
+            forecast_df = pd.DataFrame(list(forecast_data.items()), columns=['Date', 'Forecasted Sales Volume'])
             st.dataframe(forecast_df)
             
             # Plot forecast data
