@@ -66,8 +66,7 @@ def predict_sales_page():
         
         if response.status_code == 200:
             predicted_sales = response.json()
-            result = json.loads(predicted_sales.get('prediction', 'N/A'))
-            st.success(f"Predicted Sales Volume: {result['prediction']}")
+            st.success(f"Predicted Sales Volume: {predicted_sales['prediction']}")
         else:
             st.error("Error fetching prediction")
 
@@ -91,9 +90,8 @@ def forecast_sales_page():
             forecast_data = forecast_response.json()
 
             st.write("Forecasted Sales for the Next 7 Days:")
-            result = json.loads(forecast_data.get('prediction', 'N/A'))
             # Convert data to DataFrame
-            forecast_df = pd.DataFrame(result, columns=['Date', 'Forecasted Sales Volume'])
+            forecast_df = pd.DataFrame(forecast_data, columns=['Date', 'Forecasted Sales Volume'])
             st.dataframe(forecast_df)
             
             # Plot forecast data
