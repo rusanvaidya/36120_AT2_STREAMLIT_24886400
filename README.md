@@ -12,7 +12,7 @@ The backend is built with **FastAPI** and uses a machine learning model trained 
 - **Package Management**: Poetry
 - **Containerization**: Docker
 - **Predictive Model**: SGD
-- **Forecasting Model**: SARIMAX (saved as model artifacts)
+- **Forecasting Model**: SARIMAX
 
 ---
 
